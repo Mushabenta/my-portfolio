@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Linic portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("CVEY11pwvsGebhprz");
+      })();
+    </script>
+  </head>
+  <body>
+    <!--social media links-->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"
+    ></script>
+    <!---header--->
+
+    <header>
+      <div class="menu-toggle">☰</div>
+      <h1>Linic Mushabenta</h1>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <hr />
+      </nav>
+    </header>
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("nav");
+
+      menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+
+      <!---form submission---->
+      function showPopup() {
+        document.getElementById("popup").style.display = "flex";
+      }
+
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+
+      function sendEmail(event) {
+        event.preventDefault();
+
+        emailjs
+          .sendForm("service_qgo62gc", "template_82dwszw", event.target)
+          .then(() => {
+            showPopup();
+            event.target.reset(); // reset AFTER success
+          })
+          .catch(() => {
+            alert("Failed to send message");
+          });
+      }
+    </script>
+    <!---home section-->
+    <section id="home">
+      <h1>Welcome to my portfoloio</h1>
+      <div class="image-morph">
+        <img src="my image.jpeg" alt="my photo" class="stannish-image" />
+      </div>
+      <div class="home-tags">
+        <div class="mini-card">Full-Stack Developer</div>
+        <div class="mini-card">Information Technology Student</div>
+        <div class="mini-card">UI Enthusiast</div>
+      </div>
+      <p>
+        I am apassionate and dedicated Bachelor of Information Technology
+        student with strong interest in web development,software engneering and
+        modern digitalsolutions.I enjoy building clean,responsive and
+        user-friendly websites that solve real-world problems.My goal is to grow
+        into afull-stack developer who can create professional systems for
+        business organisations in Uganda and beyond
+      </p>
+      <h3>Building modern web solutions for real-world problems</h3>
+      <a href="#contact"><button>Hire Me</button></a>
+    </section>
+    <hr />
+    <!--about-->
+    <section id="about">
+      <h2>About Me</h2>
+
+      <div class="card">
+        <p>
+          I am currently studying at Victoria University Uganda Kampala,persuing
+          a Bachelor of Information Technlogy.Througout my learning journey,I
+          have developed strong skills in HTML,CSS and Javascript, and i
+          continue to improve everyday through practical projects.I am highly
+          motivated,self-driven,and always eager to learn new technologies that
+          can help me become better developer.I believe in continous learning
+          and building real projects to gain experience
+        </p>
+
+        <p>
+          My interests: I am highly interested in web development,software
+          engneering,and UI/UX design.I enjoy creating modern and responsive
+          websites ,learning how digital systems work.I also have interest in
+          mobile app development and innovative tech solutions that improve
+          everyday
+        </p>
+
+        <p>
+          Career goal: My carrer goal is to become a professional full-stack
+          developer who can design and develop complete web and mobile
+          applications. I aim to master both frontend and backend
+          development,work real industry projects,and eventually build my own
+          software company that provides digital solutions in Uganda and beyond
+        </p>
+      </div>
+    </section>
+    <hr />
+    <!---skills section--->
+    <section id="skills">
+      <h2>Skills</h2>
+
+      <p>
+        I have practical experience in HTML, CSS and JavaScript, and I am
+        continuously improving my knowledge in web development. I can design
+        structured web pages, create responsive layouts, and build simple
+        interactive features. I am also learning backend development and
+        database management to become a software developer.
+      </p>
+
+      <div class="skills-container">
+        <!-- FRONTEND CARD -->
+        <div class="card">
+          <h3>Frontend Development</h3>
+
+          <label>HTML</label>
+          <progress value="100" max="100"></progress>
+
+          <label>CSS</label>
+          <progress value="97" max="100"></progress>
+
+          <label>JavaScript</label>
+          <progress value="95" max="100"></progress>
+        </div>
+
+        <!-- BACKEND CARD -->
+        <div class="card">
+          <h3>Backend Development</h3>
+
+          <label>Node.js / Express (Learning)</label>
+          <progress value="60" max="100"></progress>
+
+          <label>Databases (Learning)</label>
+          <progress value="50" max="100"></progress>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <!---education-->
+    <section id="education">
+      <h2>Education</h2>
+      <table border="1">
+        <tr>
+          <th>Year</th>
+          <th>Institution</th>
+          <th>Qualification</th>
+        </tr>
+        <tr>
+          <td>2024-present</td>
+          <td>Victoria University</td>
+          <td>Bachelor of Information Technlogy</td>
+        </tr>
+        <tr>
+          <td>2019-2021</td>
+          <td>Kitagata SS</td>
+          <td>UACE certificate</td>
+        </tr>
+
+        <tr>
+          <td>2015-2018</td>
+          <td>St Gerald's SS Nyakibale</td>
+          <td>UCE certificate</td>
+        </tr>
+        <tr>
+          <td>2007-2013</td>
+          <td>Nyakihita P/S</td>
+          <td>PLE certificate</td>
+        </tr>
+      </table>
+    </section>
+    <!---projects-->
+    <section id="projects">
+      <h2>Projects</h2>
+      <p>
+        I have worked on several real-world projects that have helped me improve
+        my skills and understanding of web developement
+      </p>
+      <article>
+        <h3>Factory price Enterprise E-commerce platform</h3>
+        <img src="factory price.jpeg" alt="factory price image" width="300" />
+        <p>
+          I worked together with my colleague to develope an enterprise
+          e-commerce platform designed to support online buying and selling of
+          products.The system allows users to browse,view details, and interact
+          with a structured shopping interface
+        </p>
+      </article>
+      <br />
+      <article>
+        <h3>Brainstackstudios-Tech company</h3>
+
+        <p>
+          I contributed to developing the company website,focusing on clean UI
+          design,responsive layouts and strong brand identity.This project has
+          helped me gain real experience in teamwork and software developement
+        </p>
+      </article>
+      <br />
+      <article>
+        <h3>Optra-Business Operations Management system</h3>
+        <p>
+          Optra is abusiness management system designed to help businesses
+          manage tasks,workflow and daily Operations effeciently
+        </p>
+      </article>
+    </section>
+    <hr />
+    <!--media-->
+    <section id="media">
+      <h2>Introduction Video</h2>
+      <video width="300" controls>
+        <source src="intro.mp4" type="video/mp4" />
+      </video>
+
+      <hr />
+    </section>
+    <!--contact-->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>
+        I’m always excited to connect with new people, explore opportunities,
+        and work on meaningful projects. Whether you need a website, a digital
+        solution, or just want to collaborate, feel free to reach out. I usually
+        respond as quickly as possible, and I’m ready to bring your ideas to
+        life.
+      </p>
+      <form id="contact-form" onsubmit="sendEmail(event)">
+        <input
+          type="text"
+          name="from_name"
+          placeholder="Full Name"
+          required
+          minlength="3"
+        />
+
+        <input
+          type="email"
+          name="from_email"
+          placeholder="Email Address"
+          required
+        />
+
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Phone Number"
+          required
+          pattern="[0-9]{10,15}"
+        />
+
+        <select name="service" required>
+          <option value="">Select Service</option>
+          <option value="Website">Website Development</option>
+          <option value="App">Mobile App</option>
+          <option value="Consultation">IT Consultation</option>
+        </select>
+
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          required
+          minlength="10"
+        ></textarea>
+
+        <button type="submit">Send Message</button>
+        <button type="reset">Cancel</button>
+      </form>
+    </section>
+    <!-- SUCCESS POPUP -->
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <h3>✅ Message Sent Successfully</h3>
+        <p>Thank you for contacting me. I will reply soon.</p>
+        <button onclick="closePopup()">OK</button>
+      </div>
+    </div>
+    <hr />
+    <!--more-->
+    <section>
+      <details>
+        <summary>More About Me</summary>
+        <p>
+          I am a curious mind shaped by technology and creativity, constantly
+          exploring how ideas can be transformed into meaningful digital
+          experiences. I don’t just write code — I build solutions that speak,
+          solve problems, and make life easier. Every project I take on is a
+          step toward mastering the art of full-stack development and creating
+          impactful systems for the real world. My journey is driven by passion,
+          consistency, and a vision to grow into a developer who builds beyond
+          limits.
+        </p>
+      </details>
+    </section>
+    <hr />
+    <!--footer-->
+    <footer>
+      <p>&copy;2026 Linic Mushabenta.All Rights Reserved</p>
+      <br />
+      <a href="https://twitter.com/linic mushabenta" target="_blank">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </a>
+      <a href="https://www.tiktok.com/@linic25" target="_blank">
+        <ion-icon name="logo-tiktok"></ion-icon>
+      </a>
+      <a href="https://www.linkedin.com/in/mushabenta-linic" target="_blank">
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </a>
+      <a href="https://wa.me/256707764215" target="_blank">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </a>
+    </footer>
+  </body>
+</html>
